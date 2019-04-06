@@ -133,3 +133,23 @@ int find_max_prime_up_to_with_time(int number) {
 	ll ->~LinkedList();
 	return result;
 }
+
+int asal_bul(int number) {
+	if (number == 3) return 2;
+
+	LinkedList* ll = new LinkedList(3);	
+	int control_number = ll->lastNode->x * ll->lastNode->x, result = ll->lastNode->x, minus_number = 2;
+
+	while (control_number < number) {
+		if (is_prime_until_nullptr(control_number, ll->firstNode)) {
+			ll->next_prime();
+			result = control_number;
+			control_number = (ll->lastNode->x * ll->lastNode->x) - minus_number;
+		}
+		else {
+			control_number -= minus_number;
+		}
+	}
+	std::cout << ll->lastNode->x << std::endl;
+	return result;
+}

@@ -6,13 +6,13 @@
 using namespace std;
 
 int main() {
-
+	
 	clock_t start;
 	double duration;
-	int prime_number = numeric_limits<int>::max() - 4;
+	int prime_number = 160000000;
 
 	start = clock();
-	int sonuc = find_max_prime_up_to_with_time(prime_number);
+	int sonuc = asal_bul(prime_number);
 	duration = clock() - start;
 
 	cout << "Asal Sayi => " << sonuc << "\t" << duration << " miliseconds" << endl;
