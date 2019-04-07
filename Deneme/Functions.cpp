@@ -40,24 +40,22 @@ int find_prime_at(int number) {
 
 int find_max_prime_up_to(int number) {
 	if (number == 3) return 2;
-	int control = sqrt(number) + 1;
-	int result;
+	if (number % 2 == 0) number -= 1;
 
-	LinkedList * ll = new LinkedList(3);
-	int start_point = 3;
+	LinkedList* ll = new LinkedList(3);
+	int control_number = sqrt(number) + 1;
 
-	while (start_point < number) {
-		if (is_prime(start_point, ll->firstNode)) {
-			result = start_point;
-			if (ll->lastNode->x < control) {
-				ll->add(start_point);
-			};
-		}
-		start_point += 2;
+	while (ll->lastNode->x < control_number) {
+		ll->next_prime();
+	}
+	ll->next_prime();
+
+	while (!is_prime_until_nullptr(number, ll->firstNode)) {
+		number -= 2;
 	}
 
-	ll ->~LinkedList();
-	return result;
+	ll->~LinkedList();
+	return number;
 }
 
 inline bool is_prime_until_nullptr(int number, Node* primenumbers) {
@@ -131,25 +129,5 @@ int find_max_prime_up_to_with_time(int number) {
 	}
 
 	ll ->~LinkedList();
-	return result;
-}
-
-int asal_bul(int number) {
-	if (number == 3) return 2;
-
-	LinkedList* ll = new LinkedList(3);	
-	int control_number = ll->lastNode->x * ll->lastNode->x, result = ll->lastNode->x, minus_number = 2;
-
-	while (control_number < number) {
-		if (is_prime_until_nullptr(control_number, ll->firstNode)) {
-			ll->next_prime();
-			result = control_number;
-			control_number = (ll->lastNode->x * ll->lastNode->x) - minus_number;
-		}
-		else {
-			control_number -= minus_number;
-		}
-	}
-	std::cout << ll->lastNode->x << std::endl;
 	return result;
 }

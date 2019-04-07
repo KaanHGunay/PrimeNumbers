@@ -27,7 +27,7 @@ void LinkedList::next_prime() {
 
 	int x = lastNode->x + 2;
 
-	while (!is_prime(x, firstNode)) {
+	while (!is_prime_until_nullptr(x, firstNode)) {
 		x += 2;
 	}
 
