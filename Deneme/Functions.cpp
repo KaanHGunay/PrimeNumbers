@@ -1,7 +1,7 @@
 #include "Functions.h"
 
-inline bool is_prime(int number, Node* primenumbers) {
-	int control = sqrt(number) + 1;
+inline bool is_prime( int  number, Node* primenumbers) {
+	 int  control = sqrt(number) + 1;
 	Node* ctr = primenumbers;
 
 	while (ctr->x < control) {
@@ -16,11 +16,11 @@ inline bool is_prime(int number, Node* primenumbers) {
 	return true;
 }
 
-int find_prime_at(int number) {
+ int  find_prime_at( int  number) {
 	if (number == 1) return 2;
 
 	LinkedList * ll = new LinkedList(3);
-	int start_point = 5, found_primes = 2;
+	 int  start_point = 5, found_primes = 2;
 
 	while (found_primes != number) {
 		if (is_prime(start_point, ll->firstNode)) {
@@ -38,12 +38,12 @@ int find_prime_at(int number) {
 	return start_point;
 }
 
-int find_max_prime_up_to(int number) {
+ int  find_max_prime_up_to( int  number) {
 	if (number == 3) return 2;
 	if (number % 2 == 0) number -= 1;
 
 	LinkedList* ll = new LinkedList(3);
-	int control_number = sqrt(number) + 1;
+	 int  control_number = sqrt(number) + 1;
 
 	while (ll->lastNode->x < control_number) {
 		ll->next_prime();
@@ -58,8 +58,8 @@ int find_max_prime_up_to(int number) {
 	return number;
 }
 
-inline bool is_prime_until_nullptr(int number, Node* primenumbers) {
-	int control = sqrt(number) + 1;
+inline bool is_prime_until_nullptr( int  number, Node* primenumbers) {
+	 int  control = sqrt(number) + 1;
 	Node* ctr = primenumbers;
 
 	while (ctr->next != nullptr) {
@@ -73,11 +73,11 @@ inline bool is_prime_until_nullptr(int number, Node* primenumbers) {
 	return true;
 }
 
-int find_primes(int number) {
+ int  find_primes( int  number) {
 	if (number == 1) return 2;
 
 	LinkedList * ll = new LinkedList(3);
-	int start_point = 5, found_primes = 2, control_number;
+	 int  start_point = 5, found_primes = 2, control_number;
 
 	while (found_primes != number) {
 
@@ -99,16 +99,16 @@ int find_primes(int number) {
 	return start_point;
 }
 
-int find_max_prime_up_to_with_time(int number) {
+ int  find_max_prime_up_to_with_time( int  number) {
 	if (number == 3) return 2;
-	int control = sqrt(number) + 1;
-	int result;
+	 int  control = sqrt(number) + 1;
+	 int  result;
 
 	clock_t start;
 	double duration;
 	LinkedList * ll = new LinkedList(3);
-	int start_point = 3;
-	int million = 1;
+	 int  start_point = 3;
+	 int  million = 1;
 
 	while (start_point < number) {
 		start = clock();

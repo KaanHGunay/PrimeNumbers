@@ -8,8 +8,8 @@ public:
 	Node* lastNode;
 
 	LinkedList();
-	LinkedList(int);
-	void add(int);
+	LinkedList( int);
+	void add( int);
 	void next_prime();
 	~LinkedList();
 };

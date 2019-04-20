@@ -6,7 +6,7 @@ Node::Node()
 	next = nullptr;
 }
 
-Node::Node(int x)
+Node::Node( int x)
 {
 	this->x = x;
 	next = nullptr;

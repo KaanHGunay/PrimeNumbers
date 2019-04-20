@@ -7,13 +7,13 @@ LinkedList::LinkedList() {
 	lastNode = n;
 }
 
-LinkedList::LinkedList(int x) {
+LinkedList::LinkedList( int  x) {
 	Node* n = new Node(x);
 	firstNode = n;
 	lastNode = n;
 }
 
-void LinkedList::add(int x) {
+void LinkedList::add( int  x) {
 	Node* n = new Node(x);
 	lastNode->next = n;
 	lastNode = lastNode->next;
@@ -25,7 +25,7 @@ void LinkedList::next_prime() {
 		return;
 	}
 
-	int x = lastNode->x + 2;
+	 int  x = lastNode->x + 2;
 
 	while (!is_prime_until_nullptr(x, firstNode)) {
 		x += 2;

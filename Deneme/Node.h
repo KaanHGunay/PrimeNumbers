@@ -1,12 +1,13 @@
 #pragma once
+#include "stdint.h"
 
 class Node
 {
 public:
-	int x;
+	 int x;
 	Node* next;
 
 	Node();
-	Node(int);
+	Node( int);
 };
 
